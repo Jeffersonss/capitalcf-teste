@@ -1,0 +1,152 @@
+<section class="elenco-carrousel">
+    <h2><span class="title-span">Confira nosso</span>Elenco 2022</h2>
+
+    <div class="glide-elenco">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                <li class="glide__slide">
+                    <img src="../img-cleysson.jpg" alt="" />
+                </li>
+                <li class="glide__slide">
+                    <img src="../img-geovane.jpg" alt="" />
+                </li>
+                <li class="glide__slide">
+                    <img src="../img-leo-rodrigues.jpg" alt="" />
+                </li>
+                <li class="glide__slide">
+                    <img src="../img-wallace.jpg" alt="" />
+                </li>
+            </ul>
+        </div>
+
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"
+            ></button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"
+            ></button>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+    .elenco-carrousel {
+        margin-top: 6.4rem;
+        padding-block: 6.4rem;
+        background: url(../img-fundo-elenco.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+    }
+
+    .elenco-carrousel::before,
+    .elenco-carrousel::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        position: absolute;
+    }
+    .elenco-carrousel::before {
+        border-width: 97.5px 110px 97.5px 0;
+        border-color: transparent #eaf4ff transparent transparent;
+        top: -50px;
+        right: 0;
+    }
+    .elenco-carrousel::after {
+        border-width: 97.5px 0 97.5px 110px;
+        border-color: transparent transparent transparent #eaf4ff;
+        bottom: -120px;
+        left: 0;
+    }
+
+    .title-span {
+        font-size: 18px;
+        font-weight: 400;
+        text-transform: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Open Sans";
+    }
+
+    .title-span::before {
+        content: "";
+        background: url(../ornamento.svg);
+        width: 26px;
+        height: 20px;
+    }
+
+    .elenco-carrousel > h2 {
+        font-size: 36px;
+        text-transform: uppercase;
+        font-style: italic;
+        font-family: "Montserrat";
+        font-weight: 800;
+        line-height: 80%;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 32px;
+    }
+    .glide-elenco {
+        width: 90%;
+        max-width: 108.2rem;
+        margin: auto;
+    }
+
+    .glide__arrows {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 32px;
+    }
+
+    .glide__arrow {
+        box-shadow: none;
+        cursor: pointer;
+    }
+
+    .glide__arrow--left {
+        background: url(../icon-carousel-prev.svg);
+        background-repeat: no-repeat;
+        border: none;
+        padding: 20px;
+    }
+
+    .glide__arrow--left:focus {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .glide__arrow--right:focus {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .glide__arrow--right {
+        background: url(../icon-carousel-next.svg);
+        background-repeat: no-repeat;
+        border: none;
+        padding: 20px;
+    }
+</style>
+
+<script>
+    import Glide from "../../node_modules/@glidejs/glide";
+
+    new Glide(".glide-elenco", {
+        type: "carousel",
+        breakpoints: {
+            699: {
+                perView: 1,
+            },
+            800: {
+                perView: 2,
+            },
+            1100: {
+                perView: 3,
+            },
+        },
+
+        perView: 4,
+        gap: 4,
+    }).mount();
+</script>

@@ -1,0 +1,59 @@
+<section class="patrocinio">
+    <h2><span class="title-span">Conheça nossos</span>Patrocinadores</h2>
+    <figure>
+      <img src="../img-brb.jpg" alt="">
+    </figure>
+    <div class="patrocinio-grid">
+        <img src="../img-agua.jpg" alt="">
+        <img src="../img-agua.jpg" alt="">
+        <img src="../img-agua.jpg" alt="">
+        <img src="../img-agua.jpg" alt="">
+    </div>
+</section>
+
+<style lang="scss">
+
+.title-span {
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Open Sans";
+}
+
+.title-span::before {
+    content: "";
+    background: url(../ornamento.svg);
+    width: 26px;
+    height: 20px;
+}
+
+.patrocinio {
+
+    h2 {
+        font-size: 30px;
+        text-transform: uppercase;
+        font-style: italic;
+        font-family: "Montserrat";
+        font-weight: 800;
+        line-height: 80%;
+        text-align: center;
+        color: #161B2A;
+        margin-bottom: 32px;
+    }
+    &>figure{
+     text-align: center;
+    }
+}
+
+.patrocinio-grid {
+    display: grid;
+    justify-items: center;
+    max-width: 777px;
+    margin: auto;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(176px, 1fr));
+}
+</style>

@@ -1,0 +1,204 @@
+---
+import "/node_modules/@glidejs/glide/dist/glide.min.js";
+import "/node_modules/@glidejs/glide/dist/css/glide.core.min.css";
+---
+
+
+<section class="jogos">
+
+    <div class="container">
+        <h2><span class="title-span">Próximos</span>Jogos</h2>
+
+        <section class="glide-jogos">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide-jogos">
+                        <div class="glide__slide__conteudo">
+                            <header>
+                                <img src="../brasão-capital.png" alt="">
+                                X
+                                <img src="../brasão-capital.png" alt="">
+                            </header>
+                            <div class="glide__slide__conteudo--info">
+                                <h5>Campeonato Brasiliense</h5>
+                                <p class="modalidade">Futebol Masculino</p>
+                                <p class="horario">17/10/2022 15:30</p>
+                                <h6>Estádio JK</h6>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="glide__slide-jogos">
+                        <div class="glide__slide__conteudo">
+                            <header>
+                                <img src="../brasão-capital.png" alt="">
+                                X
+                                <img src="../brasão-capital.png" alt="">
+                            </header>
+                            <div class="glide__slide__conteudo--info">
+                                <h5>Campeonato Brasiliense</h5>
+                                <p class="modalidade">Futebol Masculino</p>
+                                <p class="horario">17/10/2022 15:30</p>
+                                <h6>Estádio JK</h6>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"></button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"></button>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+
+<style lang="scss">
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.jogos {
+    background-color: #161B30;
+    padding-block: 32px;
+}
+
+.title-span {
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Open Sans";
+}
+
+.title-span::before {
+    content: "";
+    background: url(../ornamento.svg);
+    width: 26px;
+    height: 20px;
+}
+
+.jogos .container>h2 {
+    font-size: 36px;
+    text-transform: uppercase;
+    font-style: italic;
+    font-family: "Montserrat";
+    font-weight: 800;
+    line-height: 80%;
+    text-align: center;
+    color: white;
+    margin-bottom:32px;
+
+}
+.glide-jogos{
+    position: relative;
+}
+
+.glide__slide-jogos{
+    text-decoration: none;
+    font-family: "Montserrat";
+    font-weight: 800;
+}
+
+.glide__slide__conteudo{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+}
+
+.glide__slide__conteudo>header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: #fff;
+}
+
+.glide__slide__conteudo--info {
+    color: #fff;
+    text-align: center;
+}
+
+.glide__slide__conteudo--info>h5 {
+    margin-bottom: 4px;
+}
+
+.glide__slide__conteudo--info>p {
+    font-weight: 400;
+    font-size: 16px;
+    color: #DFDFDF;
+}
+
+.glide__slide__conteudo--info>h6 {
+    margin-top: 4px;
+    font-size: 16px;
+}
+
+.glide__arrows{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.glide__arrow--left {
+    background: url(../icon-carousel-prev.svg);
+    background-repeat: no-repeat;
+    border: none;
+    height: 32px;
+    padding: 20px;
+
+}
+
+.glide__arrow--left:focus {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.glide__arrow--right:focus {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.glide__arrow--right {
+    background: url(../icon-carousel-next.svg);
+    background-repeat: no-repeat;
+    border: none;
+    height: 32px;
+    padding: 20px;
+}
+
+@media(min-width:64em) {
+    .jogos .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 64px;
+    }
+    .glide-jogos{
+        width: 596px;
+    }
+    .glide__slide__conteudo{
+        flex-direction: row;
+    }
+    .glide__slide__conteudo--info{
+        text-align: right;
+    }
+}
+</style>
+
+
+<script>
+      import Glide from "../../node_modules/@glidejs/glide";
+    new Glide(".glide-jogos", {
+        type: 'slides',
+        slidesToShow: 1,
+        draggable: true,
+        gap: 0,
+    }).mount()
+</script>

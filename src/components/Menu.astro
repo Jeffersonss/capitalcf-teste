@@ -1,0 +1,384 @@
+<header>
+    <nav>
+        <ul class="menu__secundario container">
+            <li><a href="">Buscar</a></li>
+            <li><a href="">Menu</a></li>
+            <ul class="menu__secundario--redes-sociais">
+                <li><a href=""><img src="/icon-instagram.svg" alt="" /></a></li>
+                <li><a href=""><img src="/icon-twitter.svg" alt="" /></a></li>
+                <li><a href=""><img src="/icon-youtube.svg" alt="" /></a></li>
+                <li><a href=""><img src="/icon-facebook.svg" alt="" /></a></li>
+            </ul>
+        </ul>
+
+        <a class="menu__logo" href=""><img src="logo-capital.png" alt="" /></a>
+
+        <ul class="menu__principal container">
+            <div class="menu__principal--1">
+                <li><a href="">Loja</a></li>
+                <li class="menu__principal--dropdown">
+                    <a href="">O clube</a><ul class="menu__principal--submenu">
+                        <li>
+                            <a href=""></a><a href="">Institucional</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="">Notícias</a></li>
+                <li><a href="">Seja Sócio</a></li>
+            </div>
+            <div class="menu__principal--2">
+                <li><a href="">Transparência</a></li>
+                <li class="menu__principal--dropdown">
+                    <a href="">Elenco</a>
+                    <ul class="menu__principal--submenu">
+                        <li>
+                            <a href=""></a><a href="">2022</a>
+                        </li>
+                        <li><a href="">2023</a></li>
+                    </ul>
+                </li>
+                <li class="menu__principal--dropdown">
+                    <a href="">Modalidades</a>
+                    <ul class="menu__principal--submenu">
+                        <li>
+                            <a href=""></a><a href="">GoalBall</a>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+            <ul class="menu__secundario--redes-sociais">
+                <li><a href=""><img src="/icon-instagram.svg" alt="" /></a></li>
+                <li><a href=""><img src="/icon-twitter.svg" alt="" /></a></li>
+                <li><a href=""><img src="/icon-youtube.svg" alt="" /></a></li>
+                <li><a href=""><img src="/icon-facebook.svg" alt="" /></a></li>
+            </ul>
+        </ul>
+    </nav>
+</header>
+
+<style lang="scss">
+    header {
+        max-width: 100%;
+        position: relative;
+        z-index: 100;
+    }
+
+    nav {
+        height: 9rem;
+        max-width: 100%;
+    }
+
+    .menu__secundario {
+        list-style: none;
+        background: #161b2a;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+        height: 9rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline: 1.6rem;
+    }
+
+    .menu__secundario::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #161b2a;
+        display: block;
+        width: 100%;
+        height: 9rem;
+        z-index: -1;
+    }
+
+    .menu__secundario a {
+        color: white;
+        text-decoration: none;
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .menu__secundario > li:nth-child(1),
+    .menu__secundario > li:nth-child(2) {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .menu__secundario > li:nth-child(1)::before {
+        content: "";
+        background-image: url(../bx-search.svg);
+        display: block;
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+
+    .menu__secundario > li:nth-child(2) {
+        border: 1px solid white;
+        padding: 1.2rem;
+        border-radius: 0.2rem;
+        cursor: pointer;
+    }
+
+    .menu__secundario > li:nth-child(2)::after {
+        content: "";
+        background-image: url(../icon-menu.svg);
+        background-repeat: no-repeat;
+        display: block;
+        width: 1.8rem;
+        height: 1rem;
+    }
+
+    .menu__secundario > .menu__secundario--redes-sociais {
+        display: none;
+    }
+    .menu__secundario > .menu__secundario--redes-sociais li:hover{
+        transform: scale(1.1);
+        transition: all 200ms;
+    }
+
+    .menu__logo img {
+        width: 7.2rem;
+        height: 8.9rem;
+        position: absolute;
+        z-index: 999;
+        left: 50%;
+        transform: translateX(-55%);
+        top: 2rem;
+    }
+
+    .menu__principal {
+        background: #161b2a;
+        min-height: 0;
+        visibility: hidden;
+        list-style: none;
+        padding-block: 6.2rem;
+        transform: translateY(-10rem);
+        transform-origin: top;
+        opacity: 0;
+        transition: all 300ms;
+        transition-timing-function: ease-in;
+    }
+
+    .menu__principal--show {
+        min-height: 100vh;
+        transform: translateY(0);
+        visibility: visible;
+        opacity: 1;
+        transition: all 300ms;
+        transition-timing-function: ease-in;
+        position: relative;
+        z-index: 998;
+    }
+
+    .menu__principal li {
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .menu__principal > div > li {
+        padding-bottom: 3.2rem;
+    }
+
+    .menu__principal > div > li > a {
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 2rem;
+    }
+
+    .menu__principal--submenu {
+        list-style: none;
+    }
+
+    .menu__principal--submenu a {
+        color: #dfdfdf;
+        text-decoration: none;
+        font-size: 1.8rem;
+    }
+
+    .menu__principal--submenu li {
+        margin-top: 1.6rem;
+    }
+
+    .menu__principal > .menu__secundario--redes-sociais {
+        display: flex;
+        list-style: none;
+        justify-content: space-evenly;
+    }
+
+    @media (min-width: 36.25em) {
+        .menu__principal {
+            padding: 14.2rem;
+        }
+
+        .menu__secundario {
+            padding-inline: 2.4rem;
+        }
+
+        .menu__logo img {
+            width: 11.8rem;
+            height: 14.7rem;
+            top: 2rem;
+        }
+
+    }
+
+    @media (min-width: 64em) {
+        header {
+            max-width: 100%;
+        }
+
+        nav {
+            height: 13.5rem;
+        }
+
+        .menu__logo img {
+            transform: translateX(-65%);
+        }
+
+        .menu__secundario > li:nth-child(2) {
+            display: none;
+        }
+
+        .menu__secundario .menu__secundario--redes-sociais {
+            display: flex;
+            list-style: none;
+            gap: 2.4rem;
+        }
+
+        .menu__secundario--redes-sociais img {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .menu__principal {
+            background: transparent;
+            min-height: fit-content;
+            visibility: visible;
+            padding: 6.2rem;
+            transform: none;
+            opacity: 1;
+            transition: none;
+            padding: 1.4rem;
+            display: flex;
+            justify-content: space-between;
+            padding-inline: 2.4rem;
+        }
+
+        .menu__principal .menu__principal--1,
+        .menu__principal .menu__principal--2 {
+            display: flex;
+            justify-content: space-between;
+            gap: 3.2rem;
+        }
+
+        .menu__principal > div > li > a {
+            font-size: 1.4rem;
+            color: #161b2a;
+            font-weight: 800;
+        }
+
+        .menu__principal > div > li > a:hover{
+            color: #2A8FD1;
+        } 
+
+        .menu__principal > .menu__secundario--redes-sociais {
+            display: none;
+        }
+
+        .menu__principal--1--dropdown {
+            position: relative;
+        }
+        .menu__principal .menu__principal--submenu {
+            position: absolute;
+            margin-top: 1rem;
+            min-width: 15rem;
+        }
+
+        .menu__principal--submenu a {
+            color: #161b2a;
+            font-size: 1.6rem;
+            transition: all 200ms;
+        }
+        .menu__principal--submenu a:hover{
+            color: #2A8FD1;
+            font-weight: 600;
+        }
+        
+        .menu__principal--submenu li {
+            margin-top: 0.8rem;
+        }
+        
+        .menu__principal--dropdown > a {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .menu__principal--dropdown > a::after {
+            content: "";
+            background-image: url("/icon-seta.svg");
+            width: 1.8rem;
+            height: 1.3rem;
+            display: block;
+            transition: all 300ms;
+        }
+
+        .menu__principal
+            .menu__principal--dropdown:hover
+            > .menu__principal--submenu {
+            visibility: visible;
+        }
+
+        .menu__principal--dropdown:hover > a:after {
+            transform: rotate(-180deg);
+        }
+
+        .menu__principal--1 li:nth-child(2) .menu__principal--submenu,
+        .menu__principal--2:nth-child(2) .menu__principal--submenu {
+            border: 1px solid rgba(22, 27, 42, 0.1);
+            box-shadow: 5px 4px 10px rgba(22, 27, 42, 0.09);
+            padding-block: 1.6rem;
+            padding-inline: 2.4rem;
+            background-color: white;
+            visibility: hidden;
+        }
+
+        .foto {
+            max-width: 100%;
+        }
+    }
+
+    @media (min-width: 68.75em) {
+        .menu__principal > div > li > a {
+            font-size: 1.6rem;
+        }
+    }
+
+    @media (min-width: 77.5em) {
+        .menu__principal {
+            padding-inline: 9.4rem;
+        }
+        .menu__secundario {
+            padding-inline: 9.4rem;
+        }
+    }
+</style>
+
+<script>
+    const btnMenu = document.querySelector(
+        ".menu__secundario > li:nth-child(2)"
+    );
+    const menuPrincipal = document.querySelector(".menu__principal");
+
+    console.log(menuPrincipal);
+
+    btnMenu.addEventListener("click", (item) => {
+        item.preventDefault();
+        menuPrincipal.classList.toggle("menu__principal--show");
+    });
+</script>
